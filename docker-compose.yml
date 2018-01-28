@@ -1,0 +1,9 @@
+version: '3'
+services:
+    www:
+        build: docker/www/
+        container_name: foundee-www
+        volumes:
+            - .:/var/www/html
+        ports:
+            - 80:80
