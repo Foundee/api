@@ -3,6 +3,6 @@ nelmio_api_doc:
         info:
             title: Founde API
             version: 0.1
-    routes: # to filter documented routes
-        path_patterns:
-            - ^(?!/docs$)
+    areas:
+        default:
+            path_patterns: [ ^(?!/(docs|_error)) ]
