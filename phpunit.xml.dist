@@ -15,6 +15,10 @@
         <env name="APP_SECRET" value="s$cretf0rt3st" />
         <env name="SHELL_VERBOSITY" value="-1" />
         <!-- define your env variables for the test env here -->
+
+        <!-- ###+ doctrine/doctrine-bundle ### -->
+        <env name="DATABASE_URL" value="pgsql://foundee:foundee@127.0.0.1:5432/foundee"/>
+        <!-- ###- doctrine/doctrine-bundle ### -->
     </php>
 
     <testsuites>

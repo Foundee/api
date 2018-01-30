@@ -7,3 +7,14 @@ services:
             - .:/var/www/html
         ports:
             - 80:80
+        depends_on:
+            - db
+    db:
+        image: postgres:10.1
+        container_name: foundee-db
+        ports:
+            - 5432:5432
+        environment:
+            - POSTGRES_USER=foundee
+            - POSTGRES_PASSWORD=foundee
+            - POSTGRES_DB=foundee
