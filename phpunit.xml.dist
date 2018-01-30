@@ -17,7 +17,7 @@
         <!-- define your env variables for the test env here -->
 
         <!-- ###+ doctrine/doctrine-bundle ### -->
-        <env name="DATABASE_URL" value="pgsql://foundee:foundee@127.0.0.1:5432/foundee"/>
+        <env name="DATABASE_URL" value="pgsql://foundee:foundee@db:5432/foundee"/>
         <!-- ###- doctrine/doctrine-bundle ### -->
     </php>
 
