@@ -1,0 +1,4 @@
+user_registration:
+    path: /users
+    controller: App\Controller\UserController::registration
+    methods: [POST]

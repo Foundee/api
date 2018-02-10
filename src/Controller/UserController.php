@@ -8,14 +8,11 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Swagger\Annotations as SWG;
-use Symfony\Component\Routing\Annotation\Route;
 
 class UserController extends Controller
 {
     /**
      * Register new user
-     *
-     * @Route("/users", methods={"POST"}, name="users_registration")
      *
      * @SWG\Parameter(
      *     name="username",
@@ -49,6 +46,7 @@ class UserController extends Controller
         $form = $this->createForm(RegistrationType::class, $user);
         $form->handleRequest($request);
 
+        // TODO validation + refactor
         if ($form->isSubmitted() && $form->isValid()) {
             $user->setRegisterIp($request->getClientIp());
             $em = $this->getDoctrine()->getManager();
