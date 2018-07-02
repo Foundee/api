@@ -1,0 +1,8 @@
+# errors
+error:
+    variable:
+        empty: Sent data is empty!
+    email:
+        bad: Your e-mail adress contains special chars!
+    record:
+        exists: This adress exists!
