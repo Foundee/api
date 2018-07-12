@@ -76,7 +76,7 @@ class UserController extends Controller
      *     type="string",
      *     required=true,
      * )
-	 *
+     *
      * @SWG\Response(
      *     response=201,
      *     description="Return true if email do not exists in db",
@@ -147,13 +147,13 @@ class UserController extends Controller
      *     type="string",
      *     required=true,
      * )
-	 *
+     *
      * @SWG\Response(
      *     response=201,
      *     description="Return true if login do not exists in db",
      *     @SWG\Schema(type="object", example={"success":true})
      * )
-	 *
+     *
      * Check if login is registered
      */
     public function checkLogin(
