@@ -77,7 +77,7 @@ class UserController extends Controller
      *     required=true,
      * )
 	 *
-	 * @SWG\Response(
+     * @SWG\Response(
      *     response=201,
      *     description="Return true if email do not exists in db",
      *     @SWG\Schema(type="object", example={"success":true})
@@ -89,8 +89,7 @@ class UserController extends Controller
         Request $request,
         TranslatorInterface $translation,
         ValidatorInterface $validator
-    ): JsonResponse
-    {
+    ): JsonResponse {
         $email = $request->query->get('email');
 
         if (!isset($email)) {
@@ -149,7 +148,7 @@ class UserController extends Controller
      *     required=true,
      * )
 	 *
-	 * @SWG\Response(
+     * @SWG\Response(
      *     response=201,
      *     description="Return true if login do not exists in db",
      *     @SWG\Schema(type="object", example={"success":true})
@@ -161,8 +160,7 @@ class UserController extends Controller
         Request $request,
         TranslatorInterface $translation,
         ValidatorInterface $validator
-    ): JsonResponse
-    {
+    ): JsonResponse {
         $login = $request->query->get('login');
 
         if (!isset($login)) {
