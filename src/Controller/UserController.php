@@ -70,6 +70,13 @@ class UserController extends Controller
      * @param ValidatorInterface $validator
      * @return JsonResponse
      *
+     * @SWG\Parameter(
+     *     name="email",
+     *     in="query",
+     *     type="string",
+     *     required=true,
+     * )
+     *
      * Check if email is registered.
      */
     public function checkEmail(
@@ -128,6 +135,13 @@ class UserController extends Controller
      * @param TranslatorInterface $translation
      * @param ValidatorInterface $validator
      * @return JsonResponse
+     *
+     * @SWG\Parameter(
+     *     name="login",
+     *     in="query",
+     *     type="string",
+     *     required=true,
+     * )
      *
      * Check if login is registered
      */
