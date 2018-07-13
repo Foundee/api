@@ -1,0 +1,12 @@
+user_registration:
+    path: /users
+    controller: App\Controller\UserController::registration
+    methods: [POST]
+check_email_before_registration:
+    path: /users/checkEmail
+    controller: App\Controller\UserController::checkEmail
+    methods: [GET]
+check_login_before_registration:
+    path: /users/checkLogin
+    controller: App\Controller\UserController::checkLogin
+    methods: [GET]

@@ -1,10 +1,21 @@
 language: php
 
+services:
+    - mysql
+
+env:
+    global:
+        - DATABASE_URL=mysql://root:@127.0.0.1:3306/test
+        - APP_ENV=test
+
 php:
     - 7.2
 
 install:
     - composer install
+    - php bin/console doctrine:database:create
+    - php bin/console doctrine:migrations:diff
+    - php bin/console doctrine:migrations:migrate -n
 
 script:
     - ./bin/phpunit
