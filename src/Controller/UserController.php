@@ -102,7 +102,7 @@ class UserController extends Controller
             );
         }
 
-        $errorCount = $validator->validate($email, new Assert\Email([]));
+        $errorCount = $validator->validate($email, new Assert\Email('loose'));
 
         if (0 < count($errorCount)) {
             return $this->json(
@@ -138,7 +138,6 @@ class UserController extends Controller
     /**
      * @param Request $request
      * @param TranslatorInterface $translation
-     * @param ValidatorInterface $validator
      * @return JsonResponse
      *
      * @SWG\Parameter(
@@ -158,8 +157,7 @@ class UserController extends Controller
      */
     public function checkLogin(
         Request $request,
-        TranslatorInterface $translation,
-        ValidatorInterface $validator
+        TranslatorInterface $translation
     ): JsonResponse {
         $login = $request->query->get('login');
 
