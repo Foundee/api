@@ -1,0 +1,8 @@
+# errors
+error:
+    variable:
+        empty: Przesłane dane są puste!
+    email:
+        bad: Twój adres e-mail jest niepoprawny!
+    record:
+        exists: Ten adres jest już zajęty!
