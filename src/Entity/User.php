@@ -34,8 +34,6 @@ class User implements UserInterface
      */
     private $password;
 
-    private $plainPassword;
-
     /**
      * @ORM\Column(type="datetime")
      */
@@ -84,16 +82,6 @@ class User implements UserInterface
     public function setPassword(string $password): void
     {
         $this->password = $password;
-    }
-
-    public function getPlainPassword(): string
-    {
-        return $this->plainPassword;
-    }
-
-    public function setPlainPassword(string $plainPassword): void
-    {
-        $this->plainPassword = $plainPassword;
     }
 
     public function getRegisterDate(): DateTime
