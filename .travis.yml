@@ -6,7 +6,7 @@ services:
 env:
     global:
         - DATABASE_URL=mysql://root:@127.0.0.1:3306/test
-        - APP_ENV=dev
+        - APP_ENV=test
 
 php:
     - 7.2
