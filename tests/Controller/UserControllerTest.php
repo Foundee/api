@@ -10,7 +10,7 @@ class UserControllerTest extends WebTestCase
     {
         $client = static::createClient();
 
-        $client->request('GET', '/users/checkLogin', ['login' => 'admin']);
+        $client->request('GET', '/users/check-login', ['login' => 'admin']);
 
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
     }
