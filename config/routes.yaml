@@ -3,10 +3,10 @@ user_registration:
     controller: App\Controller\UserController::registration
     methods: [POST]
 check_email_before_registration:
-    path: /users/checkEmail
+    path: /users/check-email
     controller: App\Controller\UserController::checkEmail
     methods: [GET]
 check_login_before_registration:
-    path: /users/checkLogin
+    path: /users/check-login
     controller: App\Controller\UserController::checkLogin
     methods: [GET]
