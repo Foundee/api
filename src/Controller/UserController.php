@@ -218,7 +218,7 @@ class UserController extends Controller
         return $this->json(
             [
               'status' => true,
-              'user' => $serializer->serialize($entity, ['groups' => ['user-basic-info']])
+              'user' => $serializer->normalize($entity, null, ['groups' => 'user-basic-info'])
             ],
             JsonResponse::HTTP_FOUND
         );

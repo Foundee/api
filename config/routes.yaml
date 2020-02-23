@@ -14,3 +14,5 @@ get_info_about_user:
     path: /users/{slug}
     controller: App\Controller\UserController::userInfo
     methods: [GET]
+api_login_check:
+    path: /login_check
