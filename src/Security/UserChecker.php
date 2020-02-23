@@ -28,7 +28,7 @@ class UserChecker implements UserCheckerInterface
                 $allowLogin = false;
                 break;
             }
-		}
+        }
 		
         if (!$allowLogin) {
             throw new AccountBannedException();
