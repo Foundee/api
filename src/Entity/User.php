@@ -71,11 +71,23 @@ class User implements UserInterface
      */
     private $posts;
 
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Ban", mappedBy="user")
+     */
+    private $bans;
+
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\AdminAction", mappedBy="performedBy")
+     */
+    private $adminActions;
+
     public function __construct()
     {
         $this->registerDate = new DateTime();
         $this->questions = new ArrayCollection();
         $this->posts = new ArrayCollection();
+        $this->bans = new ArrayCollection();
+        $this->adminActions = new ArrayCollection();
     }
 
     public function getId(): int
@@ -198,6 +210,68 @@ class User implements UserInterface
             // set the owning side to null (unless already changed)
             if ($post->getAuthor() === $this) {
                 $post->setAuthor(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Ban[]
+     */
+    public function getBans(): Collection
+    {
+        return $this->bans;
+    }
+
+    public function addBan(Ban $ban): self
+    {
+        if (!$this->bans->contains($ban)) {
+            $this->bans[] = $ban;
+            $ban->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeBan(Ban $ban): self
+    {
+        if ($this->bans->contains($ban)) {
+            $this->bans->removeElement($ban);
+            // set the owning side to null (unless already changed)
+            if ($ban->getUser() === $this) {
+                $ban->setUser(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|AdminAction[]
+     */
+    public function getAdminActions(): Collection
+    {
+        return $this->adminActions;
+    }
+
+    public function addAdminAction(AdminAction $adminAction): self
+    {
+        if (!$this->adminActions->contains($adminAction)) {
+            $this->adminActions[] = $adminAction;
+            $adminAction->setPerformedBy($this);
+        }
+
+        return $this;
+    }
+
+    public function removeAdminAction(AdminAction $adminAction): self
+    {
+        if ($this->adminActions->contains($adminAction)) {
+            $this->adminActions->removeElement($adminAction);
+            // set the owning side to null (unless already changed)
+            if ($adminAction->getPerformedBy() === $this) {
+                $adminAction->setPerformedBy(null);
             }
         }
 
