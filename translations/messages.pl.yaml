@@ -1,0 +1,9 @@
+# errors
+error:
+    variable:
+        empty: Przesłane dane są puste.
+    email:
+        bad: Ten adres e-mail jest niepoprawny.
+    record:
+        exists: Taki obiekt już istnieje.
+        empty: Taki obiekt nie istnieje.

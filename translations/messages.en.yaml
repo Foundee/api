@@ -1,0 +1,9 @@
+# errors
+error:
+    variable:
+        empty: Sent data is empty.
+    email:
+        bad: Your e-mail adress contains special chars.
+    record:
+        exists: This object already exists.
+        empty: This object does not exists.
